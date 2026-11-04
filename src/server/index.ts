@@ -89,9 +89,17 @@ export const routes = app
       return c.json({ error: "Text is required" }, 400)
     }
 
-    const apiKey =
-      process.env.ELEVENLABS_API_KEY;
-    const voiceId = body.voiceId
+    const apiKey = process.env.ELEVENLABS_API_KEY
+    if (!apiKey) {
+      return c.json({ error: "ELEVENLABS_API_KEY is not configured" }, 500)
+    }
+
+    const voiceId = body.voiceId || "JBFqnCBsd6RMkjVDRZzb"
+
+    const requestHeaders: Record<string, string> = {
+      "Content-Type": "application/json",
+      "xi-api-key": apiKey,
+    }
 
     try {
       const response = await fetch(
@@ -101,10 +109,7 @@ export const routes = app
             model_id: "eleven_turbo_v2_5",
             text: body.text,
           }),
-          headers: {
-            "Content-Type": "application/json",
-            "xi-api-key": apiKey,
-          },
+          headers: requestHeaders,
           method: "POST",
         }
       )
