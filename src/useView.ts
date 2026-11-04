@@ -454,16 +454,13 @@ const useView = (): UseViewReturn => {
               const bass = bassTotal / (binCount * 0.35 * 255)
               const mids = midTotal / (binCount * 0.4 * 255)
 
-              const glowCyan =
-                document.querySelector<HTMLElement>(".glow-cyan")
+              const glowCyan = document.querySelector<HTMLElement>(".glow-cyan")
               const glowPurple =
                 document.querySelector<HTMLElement>(".glow-purple")
-              const glowBlue =
-                document.querySelector<HTMLElement>(".glow-blue")
+              const glowBlue = document.querySelector<HTMLElement>(".glow-blue")
               const glowViolet =
                 document.querySelector<HTMLElement>(".glow-violet")
-              const glowCore =
-                document.querySelector<HTMLElement>(".glow-core")
+              const glowCore = document.querySelector<HTMLElement>(".glow-core")
               const gemVector =
                 document.querySelector<HTMLElement>(".gem-vector-img")
 
@@ -491,7 +488,9 @@ const useView = (): UseViewReturn => {
                 gemVector.style.transform = `translateY(${-bass * 10}px) scale(${1 + volume * 0.08})`
               }
 
-              animFrameRef.current = requestAnimationFrame(updateAudioReactivity)
+              animFrameRef.current = requestAnimationFrame(
+                updateAudioReactivity
+              )
             }
 
             animFrameRef.current = requestAnimationFrame(updateAudioReactivity)

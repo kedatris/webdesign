@@ -90,9 +90,8 @@ export const routes = app
     }
 
     const apiKey =
-      process.env.ELEVENLABS_API_KEY ||
-      "sk_bb89aa79cc9f6baf9c0793080444dbae63ce3d33ba06fc39"
-    const voiceId = body.voiceId || "JBFqnCBsd6RMkjVDRZzb"
+      process.env.ELEVENLABS_API_KEY;
+    const voiceId = body.voiceId
 
     try {
       const response = await fetch(
