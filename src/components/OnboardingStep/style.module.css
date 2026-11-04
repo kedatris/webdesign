@@ -1,0 +1,207 @@
+@keyframes cursorBlink {
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  flex: 1;
+  min-height: calc(100vh - 7.5rem);
+  min-height: calc(100svh - 7.5rem);
+}
+
+.visualSection {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3.5rem 0 2rem 0;
+  text-align: center;
+}
+
+.miniHexagonStage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.25rem;
+  position: relative;
+  z-index: 20;
+  will-change: transform;
+}
+
+.miniHexagon {
+  width: 1.8125rem;
+  height: 1.9375rem;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 0 16px rgba(192, 132, 252, 0.45));
+  will-change: transform;
+}
+
+.headline {
+  font-family: 'Bagoss TRIAL', 'Bagoss', var(--font-sans);
+  font-size: 1.5rem;
+  line-height: 1.35;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #f8fafc;
+  max-width: 22.5rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.promptContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 22.5rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+.confirmationButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 3.75rem;
+  border-radius: 1.25rem;
+  background-color: #ffffff;
+  color: #0b0c10;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.22);
+  transition: transform 0.15s ease, background-color 0.2s ease,
+    box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.confirmationButton:hover {
+  background-color: #f1f5f9;
+  box-shadow: 0 12px 28px -4px rgba(255, 255, 255, 0.35);
+}
+
+.confirmationButton:active {
+  transform: scale(0.98);
+}
+
+.bottomSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: auto;
+}
+
+.inputForm {
+  width: 100%;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3.75rem;
+  padding: 0 0.5rem 0 1.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background-color: rgba(18, 18, 23, 0.45);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.inputContainer:focus-within {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.15);
+}
+
+.cyanCursor {
+  color: #38bdf8;
+  font-weight: 300;
+  font-size: 1.25rem;
+  margin-right: 0.125rem;
+  animation: cursorBlink 1s infinite;
+  user-select: none;
+  pointer-events: none;
+}
+
+.inputField {
+  flex: 1;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.inputField::placeholder {
+  color: rgba(255, 255, 255, 0.38);
+  font-weight: 400;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9375rem;
+  height: 1.9375rem;
+  border-radius: 9999px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.04);
+}
+
+.submitButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.submitButtonActive {
+  background-color: #ffffff;
+  color: #0b0c10;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 380px) {
+  .headline {
+    font-size: 1.1875rem;
+  }
+}

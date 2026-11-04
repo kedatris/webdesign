@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Bagoss TRIAL';
+  src: local('Bagoss TRIAL'), local('BagossTRIAL'), local('Bagoss-Regular'), local('Bagoss');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes backgroundGlowPulse {
+
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.pageRoot {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  background-color: #0b0c10;
+  color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ambientVignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 38%,
+      rgba(37, 99, 235, 0.08) 0%,
+      rgba(147, 51, 234, 0.06) 40%,
+      rgba(11, 12, 16, 0.95) 85%);
+  z-index: 0;
+  animation: backgroundGlowPulse 8s infinite ease-in-out;
+}
+
+.screenContainer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 26.5rem;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 1.25rem 2.25rem 1.25rem;
+  box-sizing: border-box;
+}

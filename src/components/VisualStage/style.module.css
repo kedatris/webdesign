@@ -1,0 +1,170 @@
+.visualSection {
+  position: relative;
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20rem;
+  transition: min-height 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    margin 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.visualSectionCompact {
+  min-height: 11.5rem;
+  margin: 0.5rem 0;
+}
+
+.gemStage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 20rem;
+  height: 18.125rem;
+  max-height: 18.125rem;
+  transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gemCompact {
+  height: 9.6875rem;
+  max-height: 9.6875rem;
+  max-width: 14rem;
+  transform: translateY(-4px);
+}
+
+.glowWrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.gemCompact .glowWrapper {
+  transform: scale(0.85);
+}
+
+.glowCore {
+  position: absolute;
+  inset: -14%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(168, 85, 247, 0.45) 0%,
+    rgba(14, 165, 233, 0.35) 45%,
+    transparent 72%
+  );
+  filter: blur(34px);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.gemCompact .glowCore {
+  inset: -6%;
+  filter: blur(24px);
+}
+
+.glowCyan {
+  position: absolute;
+  top: 4%;
+  left: -8%;
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.65) 0%,
+    rgba(2, 132, 199, 0.35) 45%,
+    transparent 70%
+  );
+  filter: blur(30px);
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.glowPurple {
+  position: absolute;
+  top: 0%;
+  right: -8%;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(232, 121, 249, 0.6) 0%,
+    rgba(192, 132, 252, 0.4) 42%,
+    transparent 70%
+  );
+  filter: blur(32px);
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.glowBlue {
+  position: absolute;
+  bottom: -6%;
+  left: -4%;
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.6) 0%,
+    rgba(30, 58, 138, 0.3) 45%,
+    transparent 70%
+  );
+  filter: blur(28px);
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.glowViolet {
+  position: absolute;
+  bottom: -4%;
+  right: -3%;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.58) 0%,
+    rgba(126, 34, 206, 0.32) 45%,
+    transparent 70%
+  );
+  filter: blur(30px);
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.vectorImage {
+  position: relative;
+  z-index: 10;
+  width: auto;
+  height: 18.125rem;
+  max-height: 18.125rem;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.7))
+    drop-shadow(0 0 35px rgba(168, 85, 247, 0.35));
+  transition: height 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    max-height 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: height, max-height, transform;
+}
+
+.gemCompact .vectorImage {
+  height: 9.6875rem;
+  max-height: 9.6875rem;
+}
+
